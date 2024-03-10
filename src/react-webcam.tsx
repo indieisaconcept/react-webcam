@@ -234,7 +234,7 @@ export default class Webcam extends React.Component<WebcamProps, WebcamState> {
       this.canvas = document.createElement("canvas");
       this.canvas.width = screenshotDimensions?.width ||  canvasWidth;
       this.canvas.height = screenshotDimensions?.height || canvasHeight;
-      this.ctx = this.canvas.getContext("2d");
+      this.ctx = this.canvas.getContext("2d", { willReadFrequently: true });
     }
 
     const { ctx, canvas } = this;
